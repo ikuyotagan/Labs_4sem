@@ -14,6 +14,10 @@ namespace Lab_02
         {
             return (y*(Math.Log(x)));
         }
+        static double profunction(double x, double y)
+        {
+            return (1/x);
+        }
         public static long Fact(long n)
         {
             if (n == 0)
@@ -109,54 +113,47 @@ namespace Lab_02
         }
         public static double Priblizh(double x0, double y0, double x)
         {
-            double a, b, y, yn;
+            double a, b, y;
             long N;
+            double yl = y0;
             y = y0 + pervfunction(x, y0) - pervfunction(x0, y0);
-            a = Math.Abs(x - x0);
-            b = Math.Abs(y - y0);
+            a = 100;
+            b = 100;
             double max = 0;
-            for (double i = Math.Min(x, x0 - a); i < (Math.Max(x, x0 - a)); i+=0.1)
-            {
-                for (double j = Math.Min(y, y0 - b); j < (Math.Max(y, y0 - b)); j+=0.1)
-                {
+            for (double i = Math.Min(x0, a); i < (Math.Max(x0, a)); i+=0.01)
+                for (double j = Math.Min(y0, b); j < (Math.Max(y0, b)); j+=0.01)
                     if (Math.Abs(function(i, j)) > max)
                         max = Math.Abs(function(i, j));
-                }
-            }
             double maxn = 0;
-            for (double i = Math.Min(x, x0 - a); i < (Math.Max(x, x0 - a)); i += 0.1)
-            {
-                for (double j = Math.Min(y, y0 - b); j < (Math.Max(y, y0 - b)); j += 0.1)
-                {
-                    if (Math.Abs(pervfunction(i, j)) > maxn)
-                        maxn = Math.Abs(pervfunction(i, j));
-                }
-            }
+            for (double i = Math.Min(x0, a); i < (Math.Max(x0, a)); i += 0.01)
+                for (double j = Math.Min(y0, b); j < (Math.Max(y0, b)); j += 0.01)
+                    if (Math.Abs(profunction(i, j)) > maxn)
+                        maxn = Math.Abs(profunction(i, j));
             N = 1;
             double h = Math.Min(a, b / max);
-            Console.WriteLine(Math.Pow(maxn, N) * max * Math.Pow(h, (N + 1)) / Fact(N + 1));
-            while (0.01 <= Math.Pow(maxn, N) * max * Math.Pow(h, (N + 1)) / Fact(N + 1))
+            while (Math.Abs(yl - y) <= Math.Pow(maxn, N) * max * Math.Pow(h, (N + 1)) / Fact(N + 1))
             {
-                Console.WriteLine(Math.Pow(maxn, N) * max * Math.Pow(h, (N + 1)) / Fact(N + 1));
+                
+                yl = y0 + pervfunction(x, yl) - pervfunction(x0, yl);
                 y = y0 + pervfunction(x, y) - pervfunction(x0, y);
                 max = 0;
-                for (double i = Math.Min(x, x0 - a); i < (Math.Max(x, x0 - a)); i += 0.1)
-                {
-                    for (double j = Math.Min(y, y0 - b); j < (Math.Max(y, y0 - b)); j += 0.1)
-                    {
+                /*for (double i = Math.Min(x0, a); i < (Math.Max(x0, a)); i += 0.01)
+                    for (double j = Math.Min(y0, b); j < (Math.Max(y0, b)); j += 0.01)
                         if (Math.Abs(function(i, j)) > max)
                             max = Math.Abs(function(i, j));
-                    }
-                }
                 maxn = 0;
-                for (double i = Math.Min(x, x0 - a); i < (Math.Max(x, x0 - a)); i += 0.1)
+                for (double i = Math.Min(x0, a); i < (Math.Max(x0, a)); i += 0.01)
+                    for (double j = Math.Min(y0, b); j < (Math.Max(y0, b)); j += 0.01)
+                        if (Math.Abs(profunction(i, j)) > maxn)
+                            maxn = Math.Abs(profunction(i, j));
+                /*for (double yi = y0; yi < b; yi += h)
                 {
-                    for (double j = Math.Min(y, y0 - b); j < (Math.Max(y, y0 - b)); j += 0.1)
+                    for (double xi = x0; xi < a; xi += h)
                     {
-                        if (Math.Abs(pervfunction(i, j)) > maxn)
-                            maxn = Math.Abs(pervfunction(i, j));
+                        if (maxn < Math.Abs((function(xi, yi + 0.01 / 2) - function(xi, yi - 0.01 / 2)) / 0.01))
+                            maxn = Math.Abs((function(xi, yi + 0.01 / 2) - function(xi, yi - 0.01 / 2)) / 0.01);
                     }
-                }
+                }*/
                 h = Math.Min(a, b / max);
                 N++;
             }
@@ -167,7 +164,7 @@ namespace Lab_02
     {
         static void Main(string[] args)
         {
-            double x0 = 5, y0 = 5, x = 100, h = 0.1;
+            double x0 = 8, y0 = 8, x = 9, h = 0.1;
             Console.WriteLine("\nThe value of y at x is : " + GFG.rungeKutta(x0, y0, x, h));
             Console.WriteLine("\nThe value of y at x is : " + GFG.Adamskor(x0, y0, x, h));
             Console.WriteLine("\nThe value of y at x is : " + GFG.Adams(x0, y0, x, h));
