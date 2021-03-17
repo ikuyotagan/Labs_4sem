@@ -25,28 +25,18 @@ namespace Lab_02
             else
                 return n * Fact(n - 1);
         }
-        // Находит значение y для данного x
-        // используя размер шага h и начальный
-        // значение y0 в x0.
         public static double rungeKutta(double x0, double y0, double x, double h)
         {
-            // Подсчитать количество итераций используя
-            // размер шага или высота шага h
             int n = (int)Math.Round((x - x0) / h);
             double k1, k2, k3, k4;
-            // Итерация по количеству итераций
             double y = y0;
             for (int i = 1; i <= n; i++)
             {
-                // Применяем формулы Рунге Кутты
-                // найти следующее значение у
                 k1 = h * (function(x0, y));
                 k2 = h * (function(x0 + 0.5 * h, y + 0.5 * k1));
                 k3 = h * (function(x0 + 0.5 * h, y + 0.5 * k2));
                 k4 = h * (function(x0 + h, y + k3));
-                // Обновляем следующее значение x
                 x0 += h;
-                // Обновить следующее значение y
                 y += (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4);
             }
             return y;
@@ -65,10 +55,7 @@ namespace Lab_02
             for (int i = 1; i <= n; i++)
             {
                 y = y3 + h * (-9 * function(x0, y0) + 37 * function(x1, y1) - 59 * function(x2, y2) + 55 * function(x3, y3)) / 24;
-                //for (i = 1; i <= n; i++)
-                //{
-                    y = y3 + h * (function(x1, y1) - 5 * function(x2, y2) + 19 * function(x3, y3) + 9 * function(x4, y)) / 24;
-                //}
+                y = y3 + h * (function(x1, y1) - 5 * function(x2, y2) + 19 * function(x3, y3) + 9 * function(x4, y)) / 24;
                 x0 = x1;
                 y0 = y1;
                 x1 = x2;
@@ -137,23 +124,6 @@ namespace Lab_02
                 yl = y0 + pervfunction(x, yl) - pervfunction(x0, yl);
                 y = y0 + pervfunction(x, y) - pervfunction(x0, y);
                 max = 0;
-                /*for (double i = Math.Min(x0, a); i < (Math.Max(x0, a)); i += 0.01)
-                    for (double j = Math.Min(y0, b); j < (Math.Max(y0, b)); j += 0.01)
-                        if (Math.Abs(function(i, j)) > max)
-                            max = Math.Abs(function(i, j));
-                maxn = 0;
-                for (double i = Math.Min(x0, a); i < (Math.Max(x0, a)); i += 0.01)
-                    for (double j = Math.Min(y0, b); j < (Math.Max(y0, b)); j += 0.01)
-                        if (Math.Abs(profunction(i, j)) > maxn)
-                            maxn = Math.Abs(profunction(i, j));
-                /*for (double yi = y0; yi < b; yi += h)
-                {
-                    for (double xi = x0; xi < a; xi += h)
-                    {
-                        if (maxn < Math.Abs((function(xi, yi + 0.01 / 2) - function(xi, yi - 0.01 / 2)) / 0.01))
-                            maxn = Math.Abs((function(xi, yi + 0.01 / 2) - function(xi, yi - 0.01 / 2)) / 0.01);
-                    }
-                }*/
                 h = Math.Min(a, b / max);
                 N++;
             }
