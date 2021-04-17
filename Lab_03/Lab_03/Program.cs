@@ -62,17 +62,6 @@ namespace AMO
             double[] A = new double[n], B = new double[n], x = new double[n];
             double e;
             int i;
-            for (i = 0; i <= n - 1; i++)
-                Console.WriteLine("a[{0}]={1}  ", i + 1, a[i]);
-            Console.WriteLine();
-            for (i = 0; i <= n - 1; i++)
-                Console.WriteLine("b[{0}]={1}  ", i + 1, b[i]);
-            Console.WriteLine();
-            for (i = 0; i <= n - 1; i++)
-                Console.WriteLine("c[{0}]={1}  ", i + 1, c[i]);
-            Console.WriteLine();
-            for (i = 0; i <= n - 1; i++)
-                Console.WriteLine("d[{0}]={1}  ", i + 1, d[i]);
             A[0] = -c[0] / b[0];
             B[0] = d[0] / b[0];
             for (i = 1; i < n - 1; i++)

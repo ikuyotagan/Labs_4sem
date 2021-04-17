@@ -38,11 +38,14 @@ namespace Lab_02
                 k4 = h * (function(x0 + h, y + k3));
                 x0 += h;
                 y += (1.0 / 6.0) * (k1 + 2 * k2 + 2 * k3 + k4);
+                Console.WriteLine("The value of y at {0:0.##} is : {1:0.##}", x0, y);
             }
             return y;
         }
         public static double Adamskor(double x0, double y0, double x, double h)
         {
+            Console.WriteLine();
+            Console.WriteLine();
             double x1 = x0 + h;
             double y1 = rungeKutta(x0, y0, x1, h);
             double x2 = x1 + h;
@@ -52,7 +55,7 @@ namespace Lab_02
             double y = y0;
             int n = (int)((x - x3) / h);
             double x4 = x3 + h;
-            for (int i = 1; i <= n; i++)
+            for (int i = 1; i < n; i++)
             {
                 y = y3 + h * (-9 * function(x0, y0) + 37 * function(x1, y1) - 59 * function(x2, y2) + 55 * function(x3, y3)) / 24;
                 y = y3 + h * (function(x1, y1) - 5 * function(x2, y2) + 19 * function(x3, y3) + 9 * function(x4, y)) / 24;
@@ -65,11 +68,14 @@ namespace Lab_02
                 x3 = x4;
                 y3 = y;
                 x4 += h;
+                Console.WriteLine("The value of y at {0:0.##} is : {1:0.##}", x4, y);
             }
             return y;
         }
         public static double Adams(double x0, double y0, double x, double h)
         {
+            Console.WriteLine(); 
+            Console.WriteLine();
             double x1 = x0 + h;
             double y1 = rungeKutta(x0, y0, x1, h);
             double x2 = x1 + h;
@@ -78,9 +84,8 @@ namespace Lab_02
             double y3 = rungeKutta(x0, y0, x3, h);
             double y = y0;
             int n = (int)((x - x3) / h);
-            
             double x4 = x3 + h;
-            for (int i = 1; i <= n; i++)
+            for (int i = 1; i < n; i++)
             {
                 double f1 = function(x3, y3) - function(x2, y2);
                 double f2 = function(x3, y3) - 2 * function(x2, y2) + function(x1, y1);
@@ -95,11 +100,14 @@ namespace Lab_02
                 x3 = x4;
                 y3 = y;
                 x4 += h;
+                Console.WriteLine("The value of y at {0:0.##} is : {1:0.##}", x4, y);
             }
             return y;
         }
         public static double Priblizh(double x0, double y0, double x)
         {
+            Console.WriteLine();
+            Console.WriteLine();
             double a, b, y;
             long N;
             double yl = y0;
@@ -123,9 +131,10 @@ namespace Lab_02
                 
                 yl = y0 + pervfunction(x, yl) - pervfunction(x0, yl);
                 y = y0 + pervfunction(x, y) - pervfunction(x0, y);
-                max = 0;
+                //max = 0;
                 h = Math.Min(a, b / max);
                 N++;
+                Console.WriteLine("The value of y at {0} is : {1:0.####}",x,y);
             }
             return y;
         }
