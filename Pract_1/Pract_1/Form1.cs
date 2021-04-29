@@ -14,6 +14,7 @@ namespace Pract_1
     {
         Form2 Input = new Form2();
         Form3 Conver = new Form3();
+        Form4 Analysis = new Form4();
         public Form1()
         {
             InitializeComponent(); 
@@ -57,12 +58,17 @@ namespace Pract_1
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Игорь\n\nСтудент Итмо", "About");
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Analysis.ShowDialog();
         }
     }
 }

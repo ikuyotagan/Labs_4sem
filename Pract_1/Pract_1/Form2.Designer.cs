@@ -39,7 +39,7 @@ namespace Pract_1
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 59);
+            this.textBox1.Location = new System.Drawing.Point(48, 59);
             this.textBox1.MaxLength = 100;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(160, 20);
@@ -50,7 +50,7 @@ namespace Pract_1
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(131, 85);
+            this.textBox2.Location = new System.Drawing.Point(48, 85);
             this.textBox2.MaxLength = 100;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(160, 20);
@@ -61,7 +61,7 @@ namespace Pract_1
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(131, 111);
+            this.textBox3.Location = new System.Drawing.Point(48, 111);
             this.textBox3.MaxLength = 100;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(160, 20);
@@ -73,7 +73,7 @@ namespace Pract_1
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(131, 137);
+            this.checkBox1.Location = new System.Drawing.Point(48, 137);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(77, 17);
             this.checkBox1.TabIndex = 3;
@@ -83,7 +83,7 @@ namespace Pract_1
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(131, 160);
+            this.checkBox2.Location = new System.Drawing.Point(48, 160);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(73, 17);
             this.checkBox2.TabIndex = 4;
@@ -92,7 +92,7 @@ namespace Pract_1
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(216, 195);
+            this.button1.Location = new System.Drawing.Point(48, 183);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -104,7 +104,7 @@ namespace Pract_1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 301);
+            this.ClientSize = new System.Drawing.Size(262, 257);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
@@ -113,7 +113,7 @@ namespace Pract_1
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Треугольник";
             this.ResumeLayout(false);
             this.PerformLayout();
 
