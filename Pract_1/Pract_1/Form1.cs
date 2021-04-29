@@ -12,37 +12,47 @@ namespace Pract_1
 {
     public partial class Form1 : Form
     {
-        Form2 dlg1 = new Form2();
+        Form2 Input = new Form2();
+        Form3 Conver = new Form3();
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            Input.textBox1.ForeColor = Color.Silver;
+            Conver.textBox1.ForeColor = Color.Silver;
+            Input.textBox2.ForeColor = Color.Silver;
+            Input.textBox3.ForeColor = Color.Silver;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dlg1.ShowDialog();
+            Input.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            double Per = dlg1.a + (dlg1.b) + (dlg1.c);
-            double Plocsh = Math.Sqrt(Per/2 * (Per/2 - dlg1.a) * (Per/2 - dlg1.b) * (Per/2 - dlg1.c));
-
-            if (dlg1.checkBox1.Checked == dlg1.checkBox2.Checked == true)
+            double Per = Input.a + (Input.b) + (Input.c);
+            double Plocsh = Math.Sqrt(Per/2 * (Per/2 - Input.a) * (Per/2 - Input.b) * (Per/2 - Input.c));
+            if (Input.filled) {
+                if (Input.checkBox1.Checked == Input.checkBox2.Checked == true)
+                {
+                    MessageBox.Show("Площадь: " + Math.Round(Plocsh, 4) + "\nПериметр: " + Per, "Результат");
+                } else if (Input.checkBox1.Checked == true)
+                {
+                    MessageBox.Show("Периметр: " + Per, "Результат");
+                } else if (Input.checkBox2.Checked == true)
+                {
+                    MessageBox.Show("Площадь: " + Math.Round(Plocsh, 4), "Результат");
+                }
+            }
+            else
             {
-                MessageBox.Show("Площадь: " + Math.Round(Plocsh,4) +"\nПериметр: "+ Per, "Результат");
-            } else if (dlg1.checkBox1.Checked ==  true)
-            {
-                MessageBox.Show("Периметр: " + Per, "Результат");
-            } else if (dlg1.checkBox2.Checked == true)
-            {
-                MessageBox.Show("Площадь: " + Math.Round(Plocsh, 4), "Результат");
+                MessageBox.Show("Заполните форму!", "Косяк");
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Conver.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)

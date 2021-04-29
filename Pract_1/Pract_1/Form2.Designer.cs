@@ -45,7 +45,8 @@ namespace Pract_1
             this.textBox1.Size = new System.Drawing.Size(160, 20);
             this.textBox1.TabIndex = 0;
             this.textBox1.Text = "Сторона A";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox2
             // 
@@ -55,7 +56,8 @@ namespace Pract_1
             this.textBox2.Size = new System.Drawing.Size(160, 20);
             this.textBox2.TabIndex = 1;
             this.textBox2.Text = "Сторона B";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // textBox3
             // 
@@ -65,7 +67,8 @@ namespace Pract_1
             this.textBox3.Size = new System.Drawing.Size(160, 20);
             this.textBox3.TabIndex = 2;
             this.textBox3.Text = "Сторона C";
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
+            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // checkBox1
             // 
@@ -76,7 +79,6 @@ namespace Pract_1
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Периметр";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -87,7 +89,6 @@ namespace Pract_1
             this.checkBox2.TabIndex = 4;
             this.checkBox2.Text = "Площадь";
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // button1
             // 
@@ -113,7 +114,6 @@ namespace Pract_1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
