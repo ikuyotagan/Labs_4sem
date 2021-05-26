@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Lab_06
 {
-    public class EvaluateString
+    public class CalcString
     {
         public static double calc(string expression)
         {
@@ -38,8 +38,6 @@ namespace Lab_06
                         values.Push(operation(ops.Pop(), values.Pop(), values.Pop()));
                     ops.Push(str[i]);
                 }
-
-                Console.WriteLine("Hello World!");
             }
 
             while (ops.getLength() > 0)
@@ -123,7 +121,7 @@ namespace Lab_06
             //Console.WriteLine(stack.Pop());
             //Console.WriteLine(stack.Pop());
             //Console.WriteLine(stack.Pop());
-            Console.WriteLine(EvaluateString.calc("2*(3+2)*((5*2-8)+(6-2*2))"));
+            Console.WriteLine(CalcString.calc("2*(3+2)*((5*2-8)+(6-2*2))"));
         }
     }
 }
