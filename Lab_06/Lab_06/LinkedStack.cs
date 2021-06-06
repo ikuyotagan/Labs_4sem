@@ -2,7 +2,7 @@
 
 namespace Lab_06
 {
-    internal class LinkedStack<T>
+    public class LinkedStack<T>
     {
         private Node head;
 
@@ -60,7 +60,7 @@ namespace Lab_06
 
         private class Node
         {
-            public readonly T data;
+            public T data;
             public Node next;
 
             public Node(T d)
